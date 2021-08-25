@@ -1,11 +1,9 @@
-package com.example.EmployeeManager.employeeManager;
+package com.example.EmployeeManager;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@EnableAutoConfiguration
 public class EmployeeManagerApplication {
 
 	public static void main(String[] args) {

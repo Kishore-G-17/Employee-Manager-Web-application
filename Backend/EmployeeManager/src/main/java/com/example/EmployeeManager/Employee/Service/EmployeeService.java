@@ -1,13 +1,13 @@
-package com.example.EmployeeManager.Service;
+package com.example.EmployeeManager.Employee.Service;
 
 import java.util.List;
 import java.util.UUID;
 
-import com.example.EmployeeManager.ExceptionHandler.UserNotFoundException;
-import com.example.EmployeeManager.Model.Employee;
-import com.example.EmployeeManager.Repo.EmployeeRepo;
+import com.example.EmployeeManager.Employee.Model.Employee;
+import com.example.EmployeeManager.Employee.Repo.EmployeeRepo;
+import com.example.EmployeeManager.Employee.ExceptionHandler.UserNotFoundException;
 
-// import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,7 +17,7 @@ public class EmployeeService {
 
     private final EmployeeRepo employeeRepo;
 
-    // @Autowired
+    @Autowired
     public EmployeeService(EmployeeRepo employeeRepo) {
         this.employeeRepo = employeeRepo;
     }
@@ -36,11 +36,11 @@ public class EmployeeService {
     }
 
     public void deleteEmployee(Long Id) {
-        this.employeeRepo.deleteEmployeeById(Id);
+        this.employeeRepo.deleteById(Id);
     }
 
     public Employee findEmployee(Long Id) {
-        return this.employeeRepo.findEmployeeById(Id)
+        return this.employeeRepo.findById(Id)
                 .orElseThrow(() -> new UserNotFoundException("user with id " + Id + " was not found"));
     }
 

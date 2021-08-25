@@ -1,10 +1,11 @@
-package com.example.EmployeeManager.Resource;
+package com.example.EmployeeManager.Employee.Controller;
 
 import java.util.List;
 
-import com.example.EmployeeManager.Model.Employee;
-import com.example.EmployeeManager.Service.EmployeeService;
+import com.example.EmployeeManager.Employee.Model.Employee;
+import com.example.EmployeeManager.Employee.Service.EmployeeService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,12 +18,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/employee")
+@RequestMapping(path = "employee")
 public class EmployeeResource {
     private final EmployeeService employeeService;
 
+    @Autowired
     public EmployeeResource(EmployeeService employeeService) {
         this.employeeService = employeeService;
+    }
+
+    @GetMapping("/sample")
+    public String sample() {
+        return "kishore";
     }
 
     @GetMapping("/all")
