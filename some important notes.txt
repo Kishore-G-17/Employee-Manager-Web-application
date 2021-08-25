@@ -1,0 +1,11 @@
+Date: 23/08/2021
+Topic: Spring boot + Angular
+
+
+Spring data JPA repository:
+-> Spring boot provides a strong infrastructure for database operations.
+-> It generates necessary queries in the background so that the database operations are abstracted.
+-> In addition to CRUD operations, it provides other database features such as pagination which can be implemented even without writing single line of code.
+-> Spring data JPA repository mainly used for perform the CRUD operations.
+-> Spring data JPA repository significantly reduces the boilerplate code required to implement data access layers.
+

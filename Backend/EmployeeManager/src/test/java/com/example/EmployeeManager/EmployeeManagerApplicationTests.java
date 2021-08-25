@@ -1,10 +1,10 @@
-package com.example.EmployeeManagerApp;
+package com.example.EmployeeManager;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EmployeeManagerAppApplicationTests {
+class EmployeeManagerApplicationTests {
 
 	@Test
 	void contextLoads() {
