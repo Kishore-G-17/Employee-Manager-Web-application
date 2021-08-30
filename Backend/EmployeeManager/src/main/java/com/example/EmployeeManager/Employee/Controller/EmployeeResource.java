@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(path = "employee")
 public class EmployeeResource {
@@ -25,11 +27,6 @@ public class EmployeeResource {
     @Autowired
     public EmployeeResource(EmployeeService employeeService) {
         this.employeeService = employeeService;
-    }
-
-    @GetMapping("/sample")
-    public String sample() {
-        return "kishore";
     }
 
     @GetMapping("/all")
@@ -46,8 +43,11 @@ public class EmployeeResource {
 
     @PostMapping("/add")
     public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
+        // if (employee.getName() == null) {
+        // throw new Exception("Name not found");
+        // }
         Employee newEmployee = this.employeeService.addEmployee(employee);
-        return (new ResponseEntity<>(newEmployee, HttpStatus.CREATED));
+        return (new ResponseEntity<Employee>(newEmployee, HttpStatus.CREATED));
     }
 
     @PutMapping("/update")

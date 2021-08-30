@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EmployeeRepo extends JpaRepository<Employee, Long> {
 
-    void deleteById(Long id);
+    void deleteEmployeeById(Long id);
 
-    Optional<Employee> findById(Long id);
+    Optional<Employee> findEmployeeById(Long id);
 
 }

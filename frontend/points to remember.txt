@@ -1,0 +1,25 @@
+Date: 25/08/2021
+Topic: Angular | Important notes
+
+Node(or)npm:
+-> It is the runtime environment for executing the javascript outside the browser.
+
+e2e:
+-> This is where, we write our end-to-end tests for our application.
+-> end-to-end tests are the automated tests.
+-> It stimulates the real user so we can write the code to launch the browser navigate to the home 
+page of our application.
+
+node_modules:
+-> This is where we store the third-party libraries used for our application.
+-> This folder is purely for development purpose.
+-> When we compile our application the parts of these third party libraries are put in a bundle and
+deployed with the application itself.
+-> So we don't need to deploy these third-party libraries to the server.
+
+
+Points to remember:
+-> <input #email="ngModel" required> 
+   <div class="alert alert-danger *ngIf="email.touched && email.invalid" >
+-> In the above code "email.invalid" property works only when we mentioned 'required' keyword to the input.
+-> https://stackoverflow.com/a/37058025( employee model two way binding )

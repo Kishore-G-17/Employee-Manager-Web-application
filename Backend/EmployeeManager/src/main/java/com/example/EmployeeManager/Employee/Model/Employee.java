@@ -18,141 +18,86 @@ public class Employee implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(nullable = false, updatable = false)
-    private Long Id;
+    private Long id;
     private String name;
     private String email;
-    private String jobTitle;
-    private String imageUrl;
+    private String jobtitle;
+    private String imageurl;
     private String phone;
-    @Column(nullable = false, updatable = false)
-    private String employeeCode;
 
-    public Employee() {
-    }
-
-    public Employee(Long Id, String name, String email, String jobTitle, String imageUrl, String phone,
-            String employeeCode) {
-        this.Id = Id;
-        this.name = name;
-        this.email = email;
-        this.jobTitle = jobTitle;
-        this.imageUrl = imageUrl;
-        this.phone = phone;
-        this.employeeCode = employeeCode;
-    }
-
-    public Employee(String name, String email, String jobTitle, String imageUrl, String phone, String employeeCode) {
-        this.name = name;
-        this.email = email;
-        this.jobTitle = jobTitle;
-        this.imageUrl = imageUrl;
-        this.phone = phone;
-        this.employeeCode = employeeCode;
-    }
-
-    /**
-     * @return Long return the Id
-     */
     public Long getId() {
-        return Id;
+        return this.id;
     }
 
-    /**
-     * @param Id the Id to set
-     */
-    public void setId(Long Id) {
-        this.Id = Id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    /**
-     * @return String return the name
-     */
     public String getName() {
-        return name;
+        return this.name;
     }
 
-    /**
-     * @param name the name to set
-     */
     public void setName(String name) {
         this.name = name;
     }
 
-    /**
-     * @return String return the email
-     */
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
-    /**
-     * @param email the email to set
-     */
     public void setEmail(String email) {
         this.email = email;
     }
 
-    /**
-     * @return String return the jobTitle
-     */
-    public String getJobTitle() {
-        return jobTitle;
+    public String getJobtitle() {
+        return this.jobtitle;
     }
 
-    /**
-     * @param jobTitle the jobTitle to set
-     */
-    public void setJobTitle(String jobTitle) {
-        this.jobTitle = jobTitle;
+    public void setJobtitle(String jobtitle) {
+        this.jobtitle = jobtitle;
     }
 
-    /**
-     * @return String return the imageUrl
-     */
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImageurl() {
+        return this.imageurl;
     }
 
-    /**
-     * @param imageUrl the imageUrl to set
-     */
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImageurl(String imageurl) {
+        this.imageurl = imageurl;
     }
 
-    /**
-     * @return String return the phone
-     */
     public String getPhone() {
-        return phone;
+        return this.phone;
     }
 
-    /**
-     * @param phone the phone to set
-     */
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-    /**
-     * @return String return the employeeCode
-     */
-    public String getEmployeeCode() {
-        return employeeCode;
+    public Employee() {
     }
 
-    /**
-     * @param employeeCode the employeeCode to set
-     */
-    public void setEmployeeCode(String employeeCode) {
-        this.employeeCode = employeeCode;
+    public Employee(Long id, String name, String email, String jobtitle, String imageurl, String phone) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.jobtitle = jobtitle;
+        this.imageurl = imageurl;
+        this.phone = phone;
+    }
+
+    public Employee(String name, String email, String jobtitle, String imageurl, String phone) {
+        this.name = name;
+        this.email = email;
+        this.jobtitle = jobtitle;
+        this.imageurl = imageurl;
+        this.phone = phone;
     }
 
     @Override
     public String toString() {
-        return ("Employee{" + "id = " + this.Id + "\n" + "name = " + this.name + "\n" + "email = " + this.email + "\n"
-                + "jobTitle = " + this.jobTitle + "\n" + "phone = " + this.phone + "\n" + "imageUrl = " + this.imageUrl
-                + "\n" + "employeeCode = " + this.employeeCode + "\n" + "}");
+        return ("Employee{" + "id = " + this.id + "\n" + "name = " + this.name + "\n" + "email = " + this.email + "\n"
+                + "jobTitle = " + this.jobtitle + "\n" + "phone = " + this.phone + "\n" + "imageUrl = " + this.imageurl
+                + "}");
     }
 
 }

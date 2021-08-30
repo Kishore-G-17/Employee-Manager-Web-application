@@ -1,7 +1,6 @@
 package com.example.EmployeeManager.Employee.Service;
 
 import java.util.List;
-import java.util.UUID;
 
 import com.example.EmployeeManager.Employee.Model.Employee;
 import com.example.EmployeeManager.Employee.Repo.EmployeeRepo;
@@ -23,7 +22,7 @@ public class EmployeeService {
     }
 
     public Employee addEmployee(Employee employee) {
-        employee.setEmployeeCode(UUID.randomUUID().toString());
+        System.out.println("In service: " + employee);
         return this.employeeRepo.save(employee);
     }
 
@@ -36,11 +35,11 @@ public class EmployeeService {
     }
 
     public void deleteEmployee(Long Id) {
-        this.employeeRepo.deleteById(Id);
+        this.employeeRepo.deleteEmployeeById(Id);
     }
 
     public Employee findEmployee(Long Id) {
-        return this.employeeRepo.findById(Id)
+        return this.employeeRepo.findEmployeeById(Id)
                 .orElseThrow(() -> new UserNotFoundException("user with id " + Id + " was not found"));
     }
 
